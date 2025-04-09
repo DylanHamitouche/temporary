@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH --job-name=olink_imputation        # Job name
+#SBATCH --output=/home/dylan20/projects/def-aharroud/shared/dylanfolder/ms_aging_output/olink_imputation.log          # Output file
+#SBATCH --error=/home/dylan20/projects/def-aharroud/shared/dylanfolder/ms_aging_output/olink_imputation.log            # Error file
+#SBATCH --nodes=1                       # number of nodes
+#SBATCH --time=72:00:00                 # Time limit hrs:min:sec
+#SBATCH --ntasks=1                      # Number of tasks (usually 1 for a Python script)
+#SBATCH --cpus-per-task=10               # Number of CPU cores per task
+#SBATCH --mem=700G                        # Memory per node
+
+source /home/dylan20/projects/def-aharroud/shared/dylanfolder/dylan_bash_scripts/ENV/bin/activate
+
+
+# Run your Python script
+srun python /home/dylan20/projects/def-aharroud/shared/dylanfolder/ms_aging/olink_imputation.py
